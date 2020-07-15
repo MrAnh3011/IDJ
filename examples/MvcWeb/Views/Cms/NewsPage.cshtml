@@ -32,6 +32,7 @@
                 <div class="row">
                     @foreach (var item in Model.Archive.Posts)
                     {
+                        var datePublish = item.Regions.Hero.PublishedDate.Value ?? item.Published.Value;
                         var shareFb = "https://www.facebook.com/sharer/sharer.php?u=" + host + @item.Permalink;
                         var shareTw = "https://twitter.com/intent/tweet?text=" + host + @item.Permalink;
                         <div class="col-lg-4 col-md-6 m-b-30">
@@ -56,7 +57,7 @@
                                         </h2>
                                     </a>
                                     <hr>
-                                    <span class="news-date">@item.Published.Value.ToString("dd-MM-yyyy")</span>
+                                    <span class="news-date">@datePublish.ToString("dd-MM-yyyy")</span>
                                     <h5 class="float-right share-social">
                                         <div class="share-button">
                                             <a href="@shareFb" target="_blank"> <i class='fab fa-facebook-f'></i> </a>

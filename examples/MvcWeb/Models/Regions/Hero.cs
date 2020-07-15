@@ -37,5 +37,9 @@ namespace MvcWeb.Models.Regions
         [Field]
         [FieldDescription("Thông tin hiển thị bên trên ảnh nền")]
         public HtmlField Ingress { get; set; }
+
+        [Field]
+        [FieldDescription("Ngày đăng")]
+        public DateField PublishedDate { get; set; }
     }
 }
