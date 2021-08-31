@@ -20,18 +20,12 @@ namespace MvcWeb.Models.Regions
     /// </summary>
     public class ME
     {
-        /// <summary>
-        /// Gets/sets the title.
-        /// </summary>
         [Field(Options = FieldOption.HalfWidth)]
         public StringField Title { get; set; }
 
         [Field(Options = FieldOption.HalfWidth)]
         public TextField SubTitle { get; set; }
 
-        /// <summary>
-        /// Gets/sets the subtitle.
-        /// </summary>
         [Field]
         public ImageField Image { get; set; }
 

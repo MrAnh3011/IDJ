@@ -23,11 +23,6 @@ namespace MvcWeb.Controllers
         private readonly IDb _db;
         private readonly IModelLoader _loader;
 
-
-        /// <summary>
-        /// Default constructor.
-        /// </summary>
-        /// <param name="app">The current app</param>
         public CmsController(IApi api, IDb db, IModelLoader loader)
         {
             _api = api;
@@ -35,15 +30,6 @@ namespace MvcWeb.Controllers
             _loader = loader;
         }
 
-        /// <summary>
-        /// Gets the blog archive with the given id.
-        /// </summary>
-        /// <param name="id">The unique page id</param>
-        /// <param name="year">The optional year</param>
-        /// <param name="month">The optional month</param>
-        /// <param name="page">The optional page</param>
-        /// <param name="category">The optional category</param>
-        /// <param name="tag">The optional tag</param>
         [Route("archive")]
         public async Task<IActionResult> Archive(Guid id, int? year = null, int? month = null, int? page = null,
             Guid? category = null, Guid? tag = null)
@@ -54,10 +40,6 @@ namespace MvcWeb.Controllers
             return View(model);
         }
 
-        /// <summary>
-        /// Gets the page with the given id.
-        /// </summary>
-        /// <param name="id">The unique page id</param>
         [Route("page")]
         public async Task<IActionResult> Page(Guid id, bool draft = false)
         {
@@ -66,10 +48,6 @@ namespace MvcWeb.Controllers
             return View(model);
         }
 
-        /// <summary>
-        /// Gets the page with the given id.
-        /// </summary>
-        /// <param name="id">The unique page id</param>
         [Route("pagewide")]
         public async Task<IActionResult> PageWide(Guid id, bool draft = false)
         {
@@ -78,11 +56,6 @@ namespace MvcWeb.Controllers
             return View(model);
         }
 
-        /// <summary>
-        /// Gets the post with the given id.
-        /// </summary>
-        /// <param name="id">The unique post id</param>
-        ///
         [Route("post")]
         public async Task<IActionResult> Post(Guid id, bool draft = false)
         {
@@ -133,11 +106,6 @@ namespace MvcWeb.Controllers
             }
         }
 
-        /// <summary>
-        /// Gets the post with the given id.
-        /// </summary>
-        /// <param name="id">The unique post id</param>
-        ///
         [Route("recruitpost")]
         public async Task<IActionResult> RecruitPost(Guid id, bool draft = false)
         {
@@ -149,11 +117,6 @@ namespace MvcWeb.Controllers
             return View(model);
         }
 
-        /// <summary>
-        /// Gets the teaser page with the given id.
-        /// </summary>
-        /// <param name="id">The page id</param>
-        /// <param name="startpage">If this is the startpage of the site</param>
         [Route("teaserpage")]
         public async Task<IActionResult> TeaserPage(Guid id, bool startpage = false, bool draft = false)
         {
@@ -347,39 +310,6 @@ namespace MvcWeb.Controllers
                 ViewBag.News = "Tin tức cho nhà đầu tư";
                 ViewBag.Resolutions = "Nghị quyết HĐQT và ĐHCĐ";
             }
-//            var currentYear = DateTime.Now.Year;
-//            List < SelectListItem > listItems = new List<SelectListItem>();
-//            for (int i = currentYear; i >= 2007; i--)
-//            {
-//                bool selected = i == currentYear;
-//                var item = new SelectListItem {Selected = selected, Text = i.ToString(), Value = i.ToString()};
-//                listItems.Add(item);
-//            }
-//
-//            ViewBag.ListYears = new SelectList(listItems, "Value", "Text", 1);
-//
-//            if (InfoYear == null)
-//            {
-//                InfoYear = currentYear.ToString();
-//            }
-//            if (ReportFin == null)
-//            {
-//                ReportFin = currentYear.ToString();
-//            }
-//            if (ReportYear == null)
-//            {
-//                ReportYear = currentYear.ToString();
-//            }
-//            if (Noti == null)
-//            {
-//                Noti = currentYear.ToString();
-//            }
-//
-//            model.Info = model.Info.Where(x => x.Date.Value?.ToString("yyyy") == InfoYear).OrderByDescending(x=>x.Date.Value).ToList();
-//            model.ReportFin = model.ReportFin.Where(x => x.Date.Value?.ToString("yyyy") == ReportFin).OrderByDescending(x => x.Date.Value).ToList();
-//            model.ReportYear = model.ReportYear.Where(x => x.Date.Value?.ToString("yyyy") == ReportYear).OrderByDescending(x => x.Date.Value).ToList();
-//            model.Noti = model.Noti.Where(x => x.Date.Value?.ToString("yyyy") == Noti).OrderByDescending(x => x.Date.Value).ToList();
-
             return View(model);
         }
 
@@ -455,7 +385,13 @@ namespace MvcWeb.Controllers
             ViewBag.ListPosts = new SelectList(listItems, "Value", "Text");
             return View(model);
         }
-
+        
+        [Route("subpage")]
+        public async Task<IActionResult> SubPage(Guid id, bool startpage = false, bool draft = false)
+        {
+            var model = await _loader.GetPageAsync<SubPage>(id, HttpContext.User, draft);
+            return View(model);
+        }
         private string GetUrlLanguageByPage(Guid id)
         {
             Guid siteId = _db.Pages.SingleOrDefault(x => x.Id == id).SiteId;

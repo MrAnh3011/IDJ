@@ -20,18 +20,11 @@ namespace MvcWeb.Models.Regions
     /// </summary>
     public class Intro
     {
-        /// <summary>
-        /// Gets/sets the title.
-        /// </summary>
-        ///
         [Field(Options = FieldOption.HalfWidth)]
         public StringField HeaderName { get; set; }
         [Field(Options = FieldOption.HalfWidth)]
         public StringField Title { get; set; }
 
-        /// <summary>
-        /// Gets/sets the subtitle.
-        /// </summary>
         [Field]
         public StringField SubTitle { get; set; }
 

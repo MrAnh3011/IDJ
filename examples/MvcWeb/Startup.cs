@@ -88,6 +88,7 @@ namespace MvcWeb
                 .AddType(typeof(Models.SearchPage))
                 .AddType(typeof(Models.ApplyPage))
                 .AddType(typeof(Models.InfoPage))
+                .AddType(typeof(Models.SubPage))
                 .Build()
                 .DeleteOrphans();
 

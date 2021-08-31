@@ -32,28 +32,6 @@ namespace MvcWeb.Models.Regions
         [Field(Options = FieldOption.HalfWidth)]
         public StringField Link { get; set; }
 
-        ///// <summary>
-        ///// Gets/sets the subtitle.
-        ///// </summary>
-        //[Field(Options = FieldOption.HalfWidth)]
-        //public StringField SubTitle { get; set; }
-
-        ///// <summary>
-        ///// Gets/sets the optional teaser image.
-        ///// </summary>
-        //[Field]
-        //public ImageField Image { get; set; }
-
-        ///// <summary>
-        ///// Gets/sets the main body.
-        ///// </summary>
-        //[Field]
-        //public HtmlField Body { get; set; }
-
-        //[Field]
-        //public StringField Link { get; set; }
-
-
         [Field]
         public PageField Page { get; set; }
     }

@@ -1,0 +1,466 @@
+﻿@model MvcWeb.Models.SubPage
+@{
+    Layout = null;
+    ViewBag.Title = Model.Title;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>@ViewBag.Title</title>
+
+    <meta name="viewport" content="width=device-width, inital-scale=1.0" />
+
+    <meta name="viewport" content="width=device-width, inital-scale=1.0" />
+    <meta name="keywords" content="@ViewBag.Title">
+    <meta name="description" content="@ViewBag.Title">
+    <meta property="og:url" content="http://www.idjf.vn/apecdiamondpark">
+    <meta property="og:image" content="http://idjf.vn/uploads/c43236ad-069b-4515-bd8f-72e59e9d1a8d-tai%20sao%20hop%20tac%20-%20D.A%20Lang%20Son.jpg">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="@ViewBag.Title">
+    <meta property="og:description" content="@ViewBag.Title">
+
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link href="/assetsApecDiamonPark/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assetsApecDiamonPark/css/font-awesome.min.css" rel="stylesheet" />
+
+    <link href="/assetsApecDiamonPark/css/animate.min.css" rel="stylesheet" />
+    <link href="/assetsApecDiamonPark/css/slick.css" rel="stylesheet" />
+    <link href="/assetsApecDiamonPark/css/style.css" rel="stylesheet" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141923495-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-141923495-1');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })
+            (window, document, 'script', 'dataLayer', 'GTM-58CMPZR');
+    </script>
+    <!-- End Google Tag Manager -->
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="main_menu fw">
+                    <div class="col-xs-2 menu-toggle">
+                        <button type="button" class="menu-btn">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="logo col-xs-8 col-md-2">
+                        <a href="#">
+                            <img src="/assetsApecDiamonPark/images/logo1.png" class="img-responsive logo1">
+                            <img src="/assetsApecDiamonPark/images/logo2.png" class="img-responsive logo2" style="display: none;">
+                        </a>
+                    </div>
+
+                    <div class="menu col-md-10">
+                        <ul class="fw menu_mobile">
+                            <li class="active"><a data-id="1"><i class="fa fa-home"></i>Trang chủ</a></li>
+                            <li><a data-id="2"><i class="fa fa-globe"></i>Tổng quan</a></li>
+                            <li><a data-id="3"><i class="fa fa-map-marker"></i>Vị trí</a></li>
+                            <li><a data-id="4"><i class="fa fa-cart-plus"></i>Sản phẩm</a></li>
+                            <li><a data-id="5"><i class="fa fa-building-o"></i>Kiến trúc</a></li>
+                            <li><a data-id="6"><i class="fa fa-navicon"></i>Tiện ích</a></li>
+                            <li><a data-id="7"><i class="fa fa-image"></i>Hình ảnh</a></li>
+                            <li><a data-id="8"><i class="fa fa-newspaper-o"></i>Tin tức</a></li>
+                            <li><a data-id="9"><i class="fa fa-envelope-o"></i>Liên hệ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="hotline">
+            <i class="fa fa-phone"></i>
+            <label>Hotline</label>
+            <span>0911.811.833</span>
+        </div>
+        <div class="edit"><i class="fa fa-pencil-square-o"></i></div>
+        <div class="register">
+            <i class="fa fa-pencil-square-o"></i>
+            <label>Đăng ký</label>
+            <span>nhận thông tin</span>
+            <form action="" method="POST" role="form" style="padding: 10px 0 0;">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="name" placeholder="Họ tên">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="phone" placeholder="Điện thoại">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" rows="3" cols="1" id="content" placeholder="Nội dung"></textarea>
+                </div>
+                <button type="button" class="btn btn-success" id="btnSubmit" onclick="">Gửi đi</button>
+                <button type="button" class="close">&times;</button>
+                <p id="message"></p>
+            </form>
+        </div>
+
+        <div id="fullpage">
+
+            <section id="slide" class="section ">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                    <div class="carousel-inner slide_images">
+                        @for (int i = 0; i < Model.SlideModel.Count; i++)
+                        {
+                            var item = Model.SlideModel[i];
+                            <div class="item @(i == 0 ? "active": "") ">
+                                <a href="#" class="slide_mobile"><img src="@(item.Image.HasValue ? item.Image.Media.PublicUrl.Substring(1): "")" class="img-responsive img_mobile"></a>
+                                <a style="background: url(@(item.Image.HasValue ? item.Image.Media.PublicUrl.Substring(1): "")) no-repeat;" class="img_desktop slide_desktop"></a>
+                                <div class="slide_slogan">
+                                    <h1>@item.TitleLink</h1>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <a href="#myCarousel" data-slide="prev">
+                        <span class="fa fa-angle-left fa-3x"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a href="#myCarousel" data-slide="next">
+                        <span class="fa fa-angle-right fa-3x"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </section>
+
+            <section id="overview" class="section ">
+                <div class="container">
+                    <div class="col-md-5 wow zoomIn">
+                        <img src="@(Model.Overview.Image.HasValue ? Model.Overview.Image.Media.PublicUrl.Substring(1):"")" class="img-responsive">
+                    </div>
+                    <div class="col-md-7 overview_info">
+                        <div class="row wow slideInRight" style="margin:0;">
+                            <h2 class="title">@Model.Overview.Title1</h2>
+                            <p>
+                                @Model.Overview.Content1
+                            </p>
+                        </div>
+                        <div class="row wow slideInRight" style="margin:0;">
+                            <h2 class="title">@Model.Overview.Title2</h2>
+                            @Html.Raw(Model.Overview.Content2)
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="place" class="section ">
+                <div class="container">
+                    <div class="col-md-8 wow zoomIn">
+                        <img src="@(Model.Location.Image.HasValue ? Model.Location.Image.Media.PublicUrl.Substring(1):"")" class="img-responsive">
+                    </div>
+                    <div class="col-md-4 place_info wow slideInRight">
+                        <div class="row">
+                            <h2 class="title">@Model.Location.Title</h2>
+                            <p>
+                                @Model.Location.SubTitle
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="product" class="section ">
+                <div class="container">
+                    <div class="product_info">
+                        <h2 class="title">@Model.ProductsIntro.Title</h2>
+                        <p>
+                            @Model.ProductsIntro.Description
+                        </p>
+                    </div>
+                    <div class="product_slide">
+                        @foreach (var item in Model.ProductImages)
+                        {
+                            <div class="item">
+                                <img src="@(item.HasValue ? item.Media.PublicUrl.Substring(1) : "")" class="img-responsive">
+                            </div>
+                        }
+                    </div>
+                </div>
+            </section>
+
+            <section id="architecture" class="section ">
+                <div class="container">
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="product_info">
+                            <span>@Model.ArchitectureIntro1.SubTitle</span>
+                            <h2 class="title">@Model.ArchitectureIntro1.Title</h2>
+                            <p>
+                                @Model.ArchitectureIntro1.Description
+                            </p>
+                        </div>
+
+                        <div class="shophouse_slide">
+                            @foreach (var item in Model.ArchitectureImage1)
+                            {
+                                <div class="item">
+                                    <img src="@(item.HasValue?item.Media.PublicUrl.Substring(1):"")" class="img-responsive">
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="product_info">
+                            <span>@Model.ArchitectureIntro2.SubTitle</span>
+                            <h2 class="title">@Model.ArchitectureIntro2.Title</h2>
+                            <p>
+                                @Model.ArchitectureIntro2.Description
+                            </p>
+                        </div>
+                        <div class="wyndham_slide">
+                            @foreach (var item in Model.ArchitectureImage2)
+                            {
+                                <div class="item">
+                                    <img src="@(item.HasValue?item.Media.PublicUrl.Substring(1):"")">
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="utilities" class="section ">
+                <div class="container">
+                    <div class="product_info">
+                        <h2 class="title">@Model.UtilitiesIntro.Title</h2>
+                        <p>
+                            @Model.UtilitiesIntro.Description
+                        </p>
+                    </div>
+                    <div class="utilities_slide">
+                        @foreach (var item in Model.UtilitieImages)
+                        {
+                            <div class="item">
+                                <img src="@(item.HasValue ? item.Media.PublicUrl.Substring(1):"")" class="img-responsive">
+                            </div>
+                        }
+                    </div>
+                </div>
+            </section>
+
+            <section id="video" class="section ">
+                <div class="container">
+                    <div class="video wow slideInUp">
+                        <h2 class="title">Hình ảnh - Video</h2>
+
+                        <iframe width="800" height="450" class="video_desktop" src="@(Model.Videos.HasValue?Model.Videos.Media.PublicUrl.Substring(1):"")" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+            </section>
+
+            <section id="news" class="section ">
+                <div class="container">
+                    <div class="col-md-7 big_news wow slideInLeft">
+                        <a href="@Model.MainNews.Link" target="_blank"><img src="@(Model.MainNews.Image.HasValue?Model.MainNews.Image.Media.PublicUrl.Substring(1):"")" class="img-responsive"></a>
+                        <a href="@Model.MainNews.Link" target="_blank" class="title_news">@Model.MainNews.Title</a>
+                        <p>@Model.MainNews.SubTitle</p>
+                    </div>
+                    <div class="col-md-5 list_news wow slideInRight">
+                        <h2 class="title">Các tin khác</h2>
+                        <ul id="scrollbar">
+                            @foreach (var item in Model.SubNews)
+                            {
+                                <li>
+                                    <a href="@item.SubTitle" target="_blank">@item.Title</a>
+                                    <p>@item.Description</p>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <footer id="footer" class="section" style="position: relative;">
+                <div class="main_footer">
+                    <div class="container">
+                        <div class="col-xs-12 col-sm-12 col-md-6 wow slideInDown" style="float: right;">
+                            <h1 class="title">Đăng ký nhận thông tin dự án</h1>
+                            <form action="" method="POST" role="form" style="padding: 10px 0 0;">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="name" placeholder="Họ tên">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="phone" placeholder="Điện thoại">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="email" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" rows="3" cols="1" id="content" placeholder="Nội dung"></textarea>
+                                </div>
+                                <button type="button" class="btn btn-success" id="btnSubmit" onclick="">Gửi đi</button>
+                                <button type="button" class="close">&times;</button>
+                                <p id="message"></p>
+                            </form>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <div class="col-xs-12 col-sm-12 offset wow slideInDown">
+                                <h1 class="title">Đơn vị phát triển dự án</h1>
+                                <div class="col-sm-4 col-md-4 custom_logo">
+                                    <p class="text-center text-uppercase" style="color: #0F3C3A;font-weight: bold;">Chủ đầu tư</p>
+                                    <img src="/assetsApecDiamonPark/images/idj.png" class="img-responsive" style="height: 150px;margin: 0 auto;">
+
+                                </div>
+
+                                <div class="col-sm-4 col-md-4 custom_logo">
+                                    <p class="text-center text-uppercase" style="color: #0F3C3A;font-weight: bold;">Đơn vị phát triển dự án</p>
+                                    <img src="/assetsApecDiamonPark/images/apec.png" class="img-responsive" style="margin-top: 50px;">
+
+                                </div>
+
+                                <div class="col-sm-4 col-md-4 custom_logo">
+                                    <p class="text-center text-uppercase" style="color: #0F3C3A;font-weight: bold;">Đơn vị quản lý vận hành</p>
+                                    <img src="/assetsApecDiamonPark/images/wyndham.png" class="img-responsive">
+
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 offset wow slideInUp">
+                                <h1 class="title">Liên hệ</h1>
+                                <p>Hotline: 0911811833</p>
+                                <p>Email: contact@apec.com.vn</p>
+                                <p>Địa chỉ: Quốc lộ 1A, thuộc thôn Phai Duốc, Xã Mai Pha, thành phố Lạng Sơn</p>
+                            </div>
+                        </div>
+
+                        <div class="row note">
+                            <div class="container">
+                                <p>
+                                    *Thông số bản vẽ chỉ là tương đối hoặc đúng ở thời điểm hiện tại. Thông số chính thức của
+                                    từng căn sẽ được quy định trong văn bản ký kết giữa chủ đầu tư và khách hàng.
+                                </p>
+                                <p>*Hình ảnh sử dụng chỉ mang tính chất minh họa.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="back-to-top"><i class="fa fa-angle-double-up fa-3x" title="Back to top" aria-hidden="true"></i></div>
+            </footer>
+        </div>
+
+    </div>
+    <script src="/assetsApecDiamonPark/js/jquery-3.3.1.min.js"></script>
+    <script src="/assetsApecDiamonPark/js/bootstrap.min.js"></script>
+    <script src="/assetsApecDiamonPark/js/TweenMax.min.js"></script>
+
+    <script src="/assetsApecDiamonPark/js/wow.js"></script>
+    <script src="/assetsApecDiamonPark/js/fullpage.min.js"></script>
+    <script src="/assetsApecDiamonPark/js/slick.min.js"></script>
+    <script src="/assetsApecDiamonPark/js/easings.min.js"></script>
+    <script src="/assetsApecDiamonPark/js/js.js"></script>
+    <script type="text/javascript">
+        new WOW().init();
+        function sendMail() {
+            let host = window.location.origin
+            let name = $("#name").val();
+            if (name == "") {
+                swal({
+                    title: "Vui lòng nhập họ tên",
+                    type: "error",
+                    confirmButtonClass: "btn-danger"
+                })
+                return false;
+            } else {
+                name = $("#name").val();
+            }
+
+            let email = $("#email").val();
+            if (email == "") {
+                swal({
+                    title: "Vui lòng nhập email",
+                    type: "error",
+                    confirmButtonClass: "btn-danger"
+                })
+                return false;
+            } else {
+                email = $("#email").val();
+            }
+
+            let phone = $("#phone").val();
+            if (phone == "") {
+                swal({
+                    title: "Vui lòng nhập số điện thoại",
+                    type: "error",
+                    confirmButtonClass: "btn-danger"
+                })
+                return false;
+            } else {
+                phone = $("#phone").val();
+            }
+
+            let content = $("#content").val();
+
+            $.ajax({
+                type: "POST",
+                url: "http://api.apec.com.vn:3000/api/send-email",
+                //The key needs to match your method's input parameter (case-sensitive).
+                data: JSON.stringify({
+                    site: host,
+                    name,
+                    phone,
+                    email,
+                    content
+                }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    $("#btnSubmit").attr('disabled', true);
+
+                    if (data.status === "OK")
+                        swal({
+                            type: "success",
+                            title: data.message,
+                            confirmButtonClass: "btn-success"
+                        })
+                    else
+                        swal({
+                            type: "error",
+                            title: data.message,
+                            confirmButtonClass: "btn-danger"
+                        })
+                },
+                failure: function (errMsg) {
+                    swal({
+                        type: "error",
+                        title: errMsg,
+                        confirmButtonClass: "btn-danger"
+                    })
+                }
+            });
+        }
+    </script>
+
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58CMPZR"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+</body>
+
+</html>

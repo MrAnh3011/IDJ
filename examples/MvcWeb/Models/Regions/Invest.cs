@@ -20,32 +20,18 @@ namespace MvcWeb.Models.Regions
     /// </summary>
     public class Invest
     {
-        /// <summary>
-        /// Gets/sets the title.
-        /// </summary>
         [Field(Options = FieldOption.HalfWidth)]
         public ImageField Image { get; set; }
-        /// <summary>
-        /// Gets/sets the title.
-        /// </summary>
+
         [Field(Options = FieldOption.HalfWidth)]
         public StringField Title { get; set; }
 
-        /// <summary>
-        /// Gets/sets the description.
-        /// </summary>
         [Field(Options = FieldOption.HalfWidth)]
         public StringField Description { get; set; }
 
-        /// <summary>
-        /// Gets/sets the optional teaser image.
-        /// </summary>
         [Field(Options = FieldOption.HalfWidth)]
         public StringField Finished { get; set; }
 
-        /// <summary>
-        /// Gets/sets the main body.
-        /// </summary>
         [Field(Options = FieldOption.HalfWidth)]
         public StringField Address { get; set; }
 

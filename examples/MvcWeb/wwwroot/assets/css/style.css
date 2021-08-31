@@ -442,6 +442,7 @@ body {
     top: 8px;
     left: 16px;
     text-align: left;
+    text-shadow: 0 0 2px black;
 }
 
 /* Top right text */
